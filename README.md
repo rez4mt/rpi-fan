@@ -1,4 +1,4 @@
-## Simple python script to turn fan on/off for you raspberry pi.
+## Simple python script to turn fan on/off for your raspberry pi.
 
 
 "fan" is a python scripts that checks for cpu temperature and turns on/off the installed fan accordingly.<br/>
