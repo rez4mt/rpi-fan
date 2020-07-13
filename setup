@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ "$EUID" -ne 0 ]
+    then echo "Please run as root"
+    exit
+fi
+echo "Creating system file"
+echo [Unit] >> service
+echo After= >> service
+
+echo "" >> service
+echo [Service] >> service
+echo "ExecStart=python3 /usr/local/bin/fan" >> service
+
+echo "" >> service
+echo [Install] >> service
+echo "WantedBy=default.target">>service
+echo "Created"
+echo "Moving fan to bin folder"
+sudo cp fan /usr/local/bin/fan
+echo "Adding service"
+sudo mv service /etc/systemd/system/fan-sc.service
+sudo chmod 644 /etc/systemd/system/fan-sc.service
+echo "Reloading"
+sudo systemctl daemon-reload
+echo "Enabling service"
+sudo systemctl enable fan-sc.service
+
+echo "Done"
