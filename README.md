@@ -6,10 +6,8 @@ if you want to have it as a service in your startup you can run "setup" script a
 
 Scripts is tested on Raspberry pi OS and RPi 3.
 
-## Schema :
+## My setup:
 ![schema](schema.png?raw=true)
 <br/>
-<br/>
-## Board :
 ![board](board.png?raw=true)
 
